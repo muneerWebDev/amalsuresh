@@ -1,6 +1,6 @@
 $color-primary: #FF5520;
 $color-secondary: #fff;
-$color-secondary-light: #868686;
+$color-background: #D0D0D0;
 $color-beige: #F5F5F5;
 $color-dark: $color-primary;
 $color-darker: #161616;
@@ -32,9 +32,8 @@ $inverse-global-muted-color: rgba($global-inverse-color, 0.6);
 // Backgrounds
 //
 
-$global-background:                              $color-secondary;
+$global-background:                              $color-background;
 
-$global-muted-background:                        $color-secondary-light;
 $global-primary-background:                      $color-primary;
 $global-secondary-background:                    $color-secondary;
 
@@ -55,7 +54,6 @@ $global-medium-gutter: 30px;
 //
 
 $global-border-width:                            1px;
-$global-border:                                  $color-secondary-light;
 
 $theme-border-radius: 10px;
 
@@ -69,7 +67,7 @@ $global-body-font-size: 1.25rem; //20px
 $global-line-height: 1.725;
 $base-body-background : $color-beige;
 
-$head-font-family: 'Sporting Grotesque';
+$second-font-family: 'Sporting Grotesque';
 // $global-font-size: 1.25rem; //20px
 $base-margin-vertical: 8px;
 $margin-margin: 30px;
@@ -82,103 +80,10 @@ $base-link-hover-text-decoration: none;
 //
 // $base-heading-font-family: $head-font-family;
 $base-heading-font-weight: 500;
-$heading-small-font-size-m: 55px;
+$heading-small-font-size-m: pxToRem(55);
 $heading-small-line-height: 1;
 $base-heading-margin-top: 0;
 
-$base-h1-font-size-m: 4.25rem;
-$base-h2-font-size-m: 4.0625rem;
-// $base-h2-line-height: 1;
-// $base-h4-font-size: 1.5rem;
-// $base-h4-line-height: 1.73;
-// $base-h5-font-size-m: 1.5rem;
-// $base-h6-font-size-m: 1.125rem;
-
-/* responsive */
-
-//
-// Nav
-//
-
-$internal-accordion-close-image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12' fill='none'%3E%3Cpath d='M8.99998 7.56265L15.6 0.962646L17.4853 2.84798L8.99998 11.3333L0.514648 2.84798L2.39998 0.962646L8.99998 7.56265Z' fill='%2397B2C2' fill-opacity='0.6'/%3E%3C/svg%3E";
-$internal-accordion-open-image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12' fill='none'%3E%3Cpath d='M8.99998 7.56265L15.6 0.962646L17.4853 2.84798L8.99998 11.3333L0.514648 2.84798L2.39998 0.962646L8.99998 7.56265Z' fill='%2397B2C2' fill-opacity='0.6'/%3E%3C/svg%3E";
-$inverse-nav-parent-icon-color: $color-primary;
-$inverse-nav-primary-item-color: $inverse-global-color;
-$inverse-nav-primary-item-hover-color: $color-primary;
-$inverse-nav-primary-item-active-color: $color-primary;
-$inverse-nav-primary-sublist-item-color: $inverse-global-color;
-$inverse-nav-primary-sublist-item-hover-color: $color-primary;
-$inverse-nav-primary-sublist-item-active-color: $color-primary;
-// $nav-primary-item-font-size: 1.75rem;
-$nav-sublist-padding-vertical: 10px;
-$nav-sublist-padding-left: 20px;
-
-$nav-default-item-color: $global-color;
-$nav-default-item-hover-color: $color-primary;
-$nav-default-item-active-color: $color-primary;
-
-$inverse-nav-default-item-color: $global-inverse-color;
-
-//
-// Subnav
-//
-
-// $subnav-item-font-size: $global-font-size;
-$subnav-item-color: $color-secondary-light;
-$subnav-item-active-color: $color-primary;
-$subnav-pill-item-active-background: $color-secondary;
-
-//
-// Navbar
-//
-
-$navbar-nav-item-height: 190px;
-$navbar-item-color: $global-inverse-color;
-$navbar-item-hover-color: $color-primary;
-$navbar-item-active-color: $color-primary;
-
-$navbar-background: $color-secondary;
-$navbar-nav-item-text-transform: none;
-$navbar-nav-item-color: $global-inverse-color;
-$navbar-nav-item-hover-color: $color-primary;
-$navbar-nav-item-onclick-color: $color-primary;
-$navbar-nav-item-active-color: $color-primary;
-// $navbar-nav-item-font-size: 1rem;
-$navbar-dropdown-nav-item-color: $color-secondary;
-$navbar-dropdown-nav-item-hover-color: $color-primary;
-$navbar-dropdown-nav-item-active-color: $color-primary;
-$navbar-toggle-color: $color-primary;
-$navbar-toggle-hover-color: $color-secondary-light;
-
-$offcanvas-bar-width : 100vw;
-$offcanvas-bar-width-m : 46.4vw;
-$offcanvas-bar-padding-vertical-m: 75px;
-$offcanvas-bar-padding-horizontal-m:10%;
-//
-//Animations
-//
-
-$animation-slide-medium-translate: 10px;
-
-
-//
-// form
-//
-
-$form-background: transparent;
-
-
-//
-// button
-//
-$button-font-size: 1.125rem; //18px
-$button-primary-background:  $color-darkest;
-$button-primary-hover-background: $color-darker;
-$button-padding-vertical: 15px;
-$button-padding-horizontal: 54px;
-
-//
-//accordion
-//
-
-$accordion-item-margin-top: 0;
+$base-h1-font-size-m: pxToRem(48);
+$base-h2-font-size-m: pxToRem(43);
+$base-h3-font-size: pxToRem(32);

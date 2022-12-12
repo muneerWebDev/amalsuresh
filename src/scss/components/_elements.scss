@@ -1,0 +1,9 @@
+@media #{$medium-and-down} {
+    .uk-h3, h3{
+        font-size: 1.6em;
+    }
+}
+
+.font-secondary {
+    font-family: $second-font-family;
+}

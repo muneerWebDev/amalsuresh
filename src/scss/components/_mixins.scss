@@ -1,0 +1,13 @@
+$medium-and-up: "only screen and (min-width : #{$breakpoint-small})" !default;
+$large-and-up: "only screen and (min-width : #{$breakpoint-medium})" !default;
+$xlarge-and-up: "only screen and (min-width : #{$breakpoint-large})" !default;
+$xxlarge-and-up: "only screen and (min-width : #{$breakpoint-xlarge})" !default;
+
+$small-and-down: "only screen and (max-width : #{$breakpoint-small})" !default;
+$medium-and-down: "only screen and (max-width : #{$breakpoint-small-max})" !default;
+$large-and-down: "only screen and (max-width : #{$breakpoint-medium-max})" !default;
+$xlarge-and-down: "only screen and (max-width : #{$breakpoint-large-max})" !default;
+
+$medium-only: "only screen and (min-width : #{$breakpoint-small}) and (max-width : #{$breakpoint-small-max})" !default;
+$large-only: "only screen and (min-width : #{$breakpoint-medium}) and (max-width : #{$breakpoint-medium-max})" !default;
+$xlarge-only: "only screen and (min-width : #{$breakpoint-large}) and (max-width : #{$breakpoint-large-max})" !default;
