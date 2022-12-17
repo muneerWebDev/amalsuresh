@@ -1,13 +1,13 @@
 /***************************/
 // add class to body when the webpage is initially loaded
-if (localStorage.getItem("cached") === null) {
-  document.getElementById("preloader").classList.add("show")
+if (sessionStorage.getItem("cached") === null) {
+  document.getElementById("preloader").classList.add("show");
   var counting = setInterval(function () {
     var loader = document.getElementById("percentage");
     var currval = parseInt(loader.innerHTML);
     var Width = 99 - currval;
     var loadscreen = document.getElementById("loader-progress");
-    loader.innerHTML = ++currval;
+    loader.innerHTML = currval + Math.floor(Math.random() * 10)
     if (currval > 89) {
       loader.innerHTML = 90;
       if (window.jQuery) {
@@ -30,12 +30,11 @@ if (localStorage.getItem("cached") === null) {
 
     loadscreen.style.transition = "0.15s";
     loadscreen.style.width = Width + "%";
-  }, 20);
+  }, 150);
 }
 (function ($) {
   "use strict";
-  localStorage.setItem("cached", "yes");
-  // localStorage.clear();
+  sessionStorage.setItem("cached", "yes");
   customUIkitIcons();
 })($);
 
