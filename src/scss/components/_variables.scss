@@ -1,24 +1,23 @@
-$color-primary: #FF5520;
+$color-primary: #ff5520;
 $color-secondary: #fff;
-$color-background: #D0D0D0;
-$color-beige: #F5F5F5;
+$color-background: #d0d0d0;
+$color-beige: #f5f5f5;
 $color-dark: $color-primary;
 $color-darker: #161616;
 $color-darkest: #000;
-$blue: #835DEE;
-
+$blue: #835dee;
 
 //
 // Colors
 //
 
-$global-color:                                   $color-primary;
-$global-emphasis-color:                          $color-primary;
-$global-muted-color:                             $color-primary;
+$global-color: $color-primary;
+$global-emphasis-color: $color-primary;
+$global-muted-color: $color-primary;
 
-$global-link-color:                              $color-primary;
-$global-link-hover-color:                        darken($color-primary, 10%);
-$global-primary-background:                      $color-primary;
+$global-link-color: $color-primary;
+$global-link-hover-color: darken($color-primary, 10%);
+$global-primary-background: $color-primary;
 
 //
 // Inverse
@@ -32,15 +31,14 @@ $inverse-global-muted-color: rgba($global-inverse-color, 0.6);
 // Backgrounds
 //
 
-$global-background:                              $color-background;
+$global-background: $color-background;
 
-$global-primary-background:                      $color-primary;
-$global-secondary-background:                    $color-secondary;
+$global-primary-background: $color-primary;
+$global-secondary-background: $color-secondary;
 
-$global-success-background:                      #32d296;
-$global-warning-background:                      #faa05a;
-$global-danger-background:                       #f0506e;
-
+$global-success-background: #32d296;
+$global-warning-background: #faa05a;
+$global-danger-background: #f0506e;
 
 //
 // Container
@@ -53,7 +51,7 @@ $global-medium-gutter: 30px;
 // Borders
 //
 
-$global-border-width:                            1px;
+$global-border-width: 1px;
 
 $theme-border-radius: 10px;
 
@@ -61,19 +59,18 @@ $theme-border-radius: 10px;
 // Base
 //
 
-$global-font-family: '8_bit_1_6';
+$global-font-family: "8_bit_1_6";
 $base-body-font-weight: 400;
 $global-body-font-size: 1.25rem; //20px
 $global-line-height: 1.725;
-$base-body-background : $color-background;
+$base-body-background: $color-background;
 
-$second-font-family: 'Sporting Grotesque';
+$second-font-family: "Sporting Grotesque";
 // $global-font-size: 1.25rem; //20px
 $base-margin-vertical: 8px;
 $margin-margin: 30px;
 // $font-size-small: 0.875;
 $base-link-hover-text-decoration: none;
-
 
 //
 // Heading
@@ -85,5 +82,26 @@ $heading-small-line-height: 1;
 $base-heading-margin-top: 0;
 
 $base-h1-font-size-m: pxToRem(48);
+$base-h1-font-size: pxToRem(33);
 $base-h2-font-size-m: pxToRem(43);
+$base-h2-font-size: pxToRem(29);
+$base-h2-line-height: 1.6976755;
 $base-h3-font-size: pxToRem(32);
+$base-h4-font-size: pxToRem(26);
+$base-h5-font-size: pxToRem(22);
+$base-h6-font-size: 16px;
+
+// utilities
+
+$padding-small-padding: 10px;
+
+$padding-large-padding: 40px;
+$padding-large-padding-l: 85px;
+
+// badge
+$badge-padding-vertical: pxToRem(16);
+$badge-padding-horizontal: pxToRem(20);
+$badge-border-radius: pxToRem(35);
+$badge-background: transparent;
+$badge-color: #{var(--primary)};
+$badge-font-size: pxToRem(22);

@@ -37,6 +37,7 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
+    "@iconfu/svg-inject": "^1.2.3",
     "jquery": "^3.6.1",
     "uikit": "^3.15.15"
   }

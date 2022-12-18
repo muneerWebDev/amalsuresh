@@ -11,10 +11,52 @@
     <link rel="preload" href="fonts/8_bit_1_6/8_bit_1_6.woff" as="font" crossorigin="anonymous" />
     <link rel="preload" href="fonts/8_bit_1_6/8_bit_1_6.woff2" as="font" crossorigin="anonymous" />
     <link rel="preload" href="fonts/SportingGrotesque/SportingGrotesque-Bold.woff" as="font" crossorigin="anonymous" />
-    <link rel="preload" href="fonts/SportingGrotesque/SportingGrotesque-Regular.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/SportingGrotesque/SportingGrotesque-Regular.woff2" as="font"
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="media/images/favicon.svg" type="image/x-icon">
     <title>Amall Suresh</title>
+    <!--build:js js/core-scripts.min.js -->
+    <script src="../node_modules/@iconfu/svg-inject/dist/svg-inject.min.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- endbuild -->
 </head>
 
 <body>
+    <header>
+        <section
+            class="top-bar uk-padding-small uk-padding-remove-horizontal uk-margin-small-top uk-margin-small-bottom">
+            <div class="uk-position-relative uk-visible-toggle uk-light uk-background-primary"
+                tabindex="-1" uk-slider="autoplay: true;autoplay-interval: 1500;pause-on-hover: false; ">
+
+                <ul class="uk-slider-items">
+                    @@include('header/topbar-items.html')
+                    @@include('header/topbar-items.html')
+                </ul>
+
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slider-item="next"></a>
+            </div>
+        </section>
+        <section
+            class="main-bar uk-padding-small uk-padding-remove-horizontal uk-margin-small-top uk-margin-small-bottom">
+            <nav class="uk-container-expand uk-container" uk-navbar>
+
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">
+                        <img src="media/images/logo.svg" width="55" height="55" alt="logo" onload="SVGInject(this)" />
+                        <!-- <span uk-icon="icon: night-switch"></span> -->
+                    </a>
+                </div>
+
+                <div class="uk-navbar-center">
+                    <a href="#" class="font-secondary color-sec uk-text-secondary uk-h5 uk-margin-remove-bottom">こんにちは</a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a href="#" data-theme-switcher><img src="media/images/night-switcher.svg" width="55" height="55" alt="logo" onload="SVGInject(this)" /></a>
+                </div>
+            </nav>
+        </section>
+    </header>

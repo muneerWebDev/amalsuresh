@@ -1,9 +1,67 @@
+:root {
+    --primary: #{$color-primary};
+    --secondary: #{$color-secondary};
+    ::selection {
+        background: var(--primary);
+        color: var(--secondary);
+    }
+}
+
 @media #{$medium-and-down} {
-    .uk-h3, h3{
+    html {
+        font-size: pxToRem(14);
+    }
+    .uk-h3,
+    h3 {
         font-size: 1.6em;
     }
+    .uk-h5,
+    h5 {
+        font-size: pxToRem(16);
+    }
+}
+
+.uk-badge {
+    border: 1px solid;
+    line-height: 1;
+    height: auto;
+    @extend .font-secondary;
+    display: inline-block;
+    margin: 15px;
 }
 
 .font-secondary {
     font-family: $second-font-family;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.spin-anime {
+    animation: spin 14s linear infinite;
+}
+
+.image {
+    position: relative;
+
+    [uk-icon="icon: circle-btn"] {
+        position: absolute;
+        top: 30%;
+        left: -6%;
+    }
+}
+
+.a-link {
+    display: inline-block;
+    transition: transform 0.3s;
+    &:hover {
+        transform: skewX(-20deg);
+    }
+}
+
+body:not(.page-loaded) {
+    & > *:not(.preloader) {
+        opacity: 0;
+    }
 }
