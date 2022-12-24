@@ -23,7 +23,8 @@
         font-size: 1.6em;
     }
     .uk-h5,
-    h5 {
+    h5,
+    .uk-badge,.uk-button {
         font-size: pxToRem(16);
     }
 }

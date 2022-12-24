@@ -20,6 +20,16 @@
 			margin-left: 84px;
 			margin-right: 98px;
 		}
+
+		@media #{$medium-and-down} {
+			img {
+				width: 45px;
+			}
+			&::after{
+				margin-left: 66px;
+    margin-right: 40px;
+			}
+		}
 	}
 }
 
@@ -41,4 +51,9 @@
 		counter-increment: sl-no;
 		content: counters(sl-no, ".", decimal-leading-zero) ".";
 	}
+}
+
+section {
+	max-width: 100vw;
+	overflow: hidden;
 }
