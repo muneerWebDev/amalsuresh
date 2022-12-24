@@ -1,10 +1,17 @@
-:root {
+:root,
+:before,
+:after {
     --primary: #{$color-primary};
     --secondary: #{$color-secondary};
     ::selection {
         background: var(--primary);
         color: var(--secondary);
     }
+}
+
+::-webkit-scrollbar{
+    height: 0px;
+    width: 0px;
 }
 
 @media #{$medium-and-down} {
@@ -21,6 +28,13 @@
     }
 }
 
+a:hover{
+    filter: grayscale(1);
+}
+.uk-button {
+    border-color: var(--primary);
+    padding: 12px 43px;
+}
 .uk-badge {
     border: 1px solid;
     line-height: 1;
@@ -38,18 +52,37 @@
     pointer-events: none;
 }
 
+.blink-anime{
+    animation: anime-blink 500ms infinite;
+}
+
 .spin-anime {
-    animation: spin 14s linear infinite;
+    animation: anime-spin 14s linear infinite;
+}
+
+.flip-anime{
+    // animation: anime-flip 1s infinite;
+    animation:1s anime-flip infinite;
+    animation-timing-function: step-end; 
 }
 
 .image {
     position: relative;
 
     [uk-icon="icon: circle-btn"] {
+        padding: 0;
         position: absolute;
         top: 30%;
         left: -6%;
     }
+}
+
+.absolute-bottom-righted{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(50%) translateY(50%);
+    padding: 0;
 }
 
 .a-link {
@@ -60,8 +93,23 @@
     }
 }
 
-body:not(.page-loaded) {
+body {
+    &:not(.page-loaded) {
+        & > * {
+            &:not(.preloader) {
+                opacity: 0;
+            }
+        }
+    }
     & > *:not(.preloader) {
-        opacity: 0;
+        position: relative;
+        z-index: 0;
+    }
+}
+
+.slick-dir-rtl {
+    transform: scaleX(-1);
+    .slick-slide {
+        transform: scaleX(-1);
     }
 }

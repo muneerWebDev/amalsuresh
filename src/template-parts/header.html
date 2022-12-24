@@ -26,18 +26,11 @@
     <header>
         <section
             class="top-bar uk-padding-small uk-padding-remove-horizontal uk-margin-small-top uk-margin-small-bottom">
-            <div class="uk-position-relative uk-visible-toggle uk-light uk-background-primary"
-                tabindex="-1" uk-slider="autoplay: true;autoplay-interval: 1500;pause-on-hover: false; ">
+            <div class="uk-position-relative uk-visible-toggle uk-light uk-background-primary slick-continues slick-dir-rtl">
 
-                <ul class="uk-slider-items">
-                    @@include('header/topbar-items.html')
-                    @@include('header/topbar-items.html')
-                </ul>
+                @@include('header/topbar-items.html')
+                @@include('header/topbar-items.html')
 
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-                    uk-slider-item="previous"></a>
-                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-                    uk-slider-item="next"></a>
             </div>
         </section>
         <section
@@ -52,10 +45,12 @@
                 </div>
 
                 <div class="uk-navbar-center">
-                    <a href="#" class="font-secondary color-sec uk-text-secondary uk-h5 uk-margin-remove-bottom">こんにちは</a>
+                    <a href="#"
+                        class="font-secondary color-sec uk-text-secondary uk-h5 uk-margin-remove-bottom">こんにちは</a>
                 </div>
                 <div class="uk-navbar-right">
-                    <a href="#" data-theme-switcher><img src="media/images/night-switcher.svg" width="55" height="55" alt="logo" onload="SVGInject(this)" /></a>
+                    <a href="#" data-theme-switcher><img src="media/images/night-switcher.svg" width="55" height="55"
+                            alt="logo" onload="SVGInject(this)" /></a>
                 </div>
             </nav>
         </section>

@@ -23,6 +23,10 @@ $base-size: 16;
 
 @import "components/mixins";
 
+@import "components/preloader";
+
+@import "plugins/slick";
+
 @import "components/elements";
 
 @import "components/global";

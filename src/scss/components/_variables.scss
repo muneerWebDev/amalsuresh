@@ -91,6 +91,10 @@ $base-h4-font-size: pxToRem(26);
 $base-h5-font-size: pxToRem(22);
 $base-h6-font-size: 16px;
 
+// button 
+$button-font-size : $base-h5-font-size;
+$button-line-height : $global-line-height;
+
 // utilities
 
 $padding-small-padding: 10px;

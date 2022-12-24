@@ -1,4 +1,4 @@
-@keyframes blink {
+@keyframes anime-blink {
     0%{
         opacity: 0;
     }
@@ -7,8 +7,14 @@
     }
 }
 
-@keyframes spin {
+@keyframes anime-spin {
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes anime-flip {
+    50%{
+        transform: scaleX(-1);
     }
 }
