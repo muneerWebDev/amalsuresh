@@ -8,9 +8,9 @@
 	overflow: hidden;
 	.pacman,
 	.catcher {
-		// display: inline-block;
-		align-items: center;
 		position: relative;
+		display: flex;
+		align-items: center;
 		&::after {
 			content: "";
 			display: inline-block;
@@ -20,14 +20,19 @@
 			margin-left: 84px;
 			margin-right: 98px;
 		}
+		.wrap,
+		img {
+			width: 68px;
+		}
 
 		@media #{$medium-and-down} {
+			.wrap,
 			img {
 				width: 45px;
 			}
-			&::after{
+			&::after {
 				margin-left: 66px;
-    margin-right: 40px;
+				margin-right: 40px;
 			}
 		}
 	}
@@ -56,4 +61,24 @@
 section {
 	max-width: 100vw;
 	overflow: hidden;
+}
+
+.scrollToTop {
+	.flip-on-scrolltop {
+		transform: scaleX(-1);
+		& > div {
+			transform: scaleX(-1);
+			img {
+				transform: scaleX(-1);
+			}
+		}
+	}
+}
+
+.blogs {
+	.uk-card-body {
+		@media #{$medium-and-down} {
+			padding: 30px 0 15px;
+		}
+	}
 }
