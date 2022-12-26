@@ -19,10 +19,6 @@
         font-size: pxToRem(14);
     }
 
-    .uk-text-large{
-        font-size: pxToRem(52);
-    }
-
     .uk-h3,
     h3 {
         font-size: 1.6em;
@@ -35,8 +31,16 @@
     }
 }
 
-a:hover {
-    filter: grayscale(1);
+a {
+    &> .uk-icon path {
+        transition: fill 0.3s;
+    }
+    &:hover {
+        filter: grayscale(1);
+        &> .uk-icon path {
+            fill: gray;
+        }
+    }
 }
 .uk-button {
     border-color: var(--primary);
