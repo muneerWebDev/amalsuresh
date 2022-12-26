@@ -103,7 +103,7 @@ function watch() {
   gulp
     .watch(
       "src/**/*.html",
-      series(htmlConcat)
+      series(parallel(htmlConcat, preJsOptimize), jsOptimize)
     )
     .on("change", browsersync.reload);
   gulp
