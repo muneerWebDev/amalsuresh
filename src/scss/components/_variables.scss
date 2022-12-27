@@ -4,6 +4,8 @@ $color-background: #d0d0d0;
 $color-beige: #f5f5f5;
 $color-dark: $color-primary;
 $color-darker: #161616;
+$inverse-badge-background: #161616;
+$inverse-badge-color : $color-secondary;
 $color-darkest: #000;
 $blue: #835dee;
 
@@ -14,6 +16,7 @@ $blue: #835dee;
 $global-color: $color-primary;
 $global-emphasis-color: $color-primary;
 $global-muted-color: $color-primary;
+$inverse-text-secondary-color : $color-primary; 
 
 $global-link-color: $color-primary;
 $global-link-hover-color: darken($color-primary, 10%);

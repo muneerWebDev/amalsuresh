@@ -9,6 +9,50 @@
     }
 }
 
+.uk-light{
+    background: $inverse-badge-background;
+    .uk-background-default,
+    .uk-card-default{
+        background: $inverse-badge-background;
+    }
+    .uk-card-default .uk-card-title:not(.uk-preserve){
+        color: var(--primary);
+    }
+    .uk-light-primary:not(.uk-preserve){
+        color: var(--secondary) !important;
+    }
+    .uk-light-secondary:not(.uk-preserve){
+        color: var(--primary) !important;
+    }
+
+    // uk preserve 
+    
+    .uk-card-default .uk-card-title.uk-preserve{
+        color: var(--secondary);
+    }
+    .uk-light-primary.uk-preserve{
+        color: var(--primary) !important;
+    }
+    .uk-light-secondary.uk-preserve{
+        color: var(--secondary) !important;
+    }
+}
+
+.uk-light,
+.uk-light :after{
+    --primary: #{$color-secondary};
+    --secondary:  #{$color-primary};
+    ::selection {
+        background: var(--primary);
+        color: var(--secondary);
+    }
+}
+
+.uk-preserve{
+    --primary: #{$color-primary} !important;
+    --secondary: #{$color-secondary} !important;
+}
+
 ::-webkit-scrollbar {
     height: 0px;
     width: 0px;

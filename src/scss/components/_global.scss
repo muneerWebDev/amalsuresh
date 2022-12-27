@@ -82,3 +82,14 @@ section {
 		}
 	}
 }
+
+.uk-light {
+	.top-bar {
+		.uk-text-secondary {
+			color: var(--primary) !important;
+		}
+	}
+	.color-sec {
+		filter: grayscale(1);
+	}
+}
