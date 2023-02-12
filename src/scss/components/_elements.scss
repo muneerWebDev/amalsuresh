@@ -9,46 +9,53 @@
     }
 }
 
-.uk-light{
+.uk-light {
     background: $inverse-badge-background;
     .uk-background-default,
-    .uk-card-default{
+    .uk-card-default {
         background: $inverse-badge-background;
     }
-    .uk-card-default .uk-card-title:not(.uk-preserve){
+    .uk-card-default .uk-card-title:not(.uk-preserve) {
         color: var(--primary);
     }
-    .uk-light-primary:not(.uk-preserve){
+    .uk-light-primary:not(.uk-preserve) {
         color: var(--secondary) !important;
     }
-    .uk-light-secondary:not(.uk-preserve){
+    .uk-light-secondary:not(.uk-preserve) {
         color: var(--primary) !important;
     }
 
-    // uk preserve 
-    
-    .uk-card-default .uk-card-title.uk-preserve{
+    // uk preserve
+
+    .uk-card-default .uk-card-title.uk-preserve {
         color: var(--secondary);
     }
-    .uk-light-primary.uk-preserve{
+    .uk-light-primary.uk-preserve {
         color: var(--primary) !important;
     }
-    .uk-light-secondary.uk-preserve{
+    .uk-light-secondary.uk-preserve {
         color: var(--secondary) !important;
+    }
+    .uk-light-hover-primary:hover {
+        --primary: var(--secondary) !important;
     }
 }
 
 .uk-light,
-.uk-light :after{
+.uk-light :after {
     --primary: #{$color-secondary};
-    --secondary:  #{$color-primary};
+    --secondary: #{$color-primary};
     ::selection {
         background: var(--primary);
         color: var(--secondary);
     }
 }
 
-.uk-preserve{
+.bg-transparent {
+    background: transparent !important;
+}
+
+.uk-preserve {
     --primary: #{$color-primary} !important;
     --secondary: #{$color-secondary} !important;
 }
@@ -76,13 +83,12 @@
 }
 
 a {
-    &> .uk-icon path {
-        transition: fill 0.3s;
-    }
-    &:hover {
-        filter: grayscale(1);
-        &> .uk-icon path {
-            fill: gray;
+    html:not(.uk-light) & {
+        &:hover {
+            filter: grayscale(1);
+            & > .uk-icon path {
+                fill: gray;
+            }
         }
     }
 }
@@ -126,11 +132,40 @@ a {
 }
 
 .a-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    [uk-icon] {
+        margin-right: 15px;
+    }
     transition: transform 0.3s;
     &:hover {
         transform: skewX(-20deg);
+        text-decoration: underline;
     }
+}
+
+html:not(.uk-light) {
+    .a-link.uk-text-secondary:hover {
+        color: $color-primary !important;
+        filter: none !important;
+        [uk-icon] {
+            path {
+                fill: $color-primary !important;
+            }
+        }
+    }
+}
+
+html.uk-light {
+    .a-link.uk-text-secondary:not(:hover) {
+        color: gray !important;
+        [uk-icon] {
+            path {
+                fill: gray !important;
+            }
+        }
+    }
+    
 }
 
 body {
