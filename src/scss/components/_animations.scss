@@ -24,11 +24,46 @@
         transform: scaleX(-1);
     }
 }
+@keyframes anime-slider-text {
+    0% {
+        opacity: 0;
+        transform: translate3d(3vw, -50%, 0);
+        width: 0;
+    }
+
+    2% {
+        opacity: 1;
+        transform: translate3d(0, -50%, 0);
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate3d(0, -50%, 0);
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+    }
+
+    12% {
+        opacity: 0;
+        transform: translate3d(3vw, -50%, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(3vw, -50%, 0);
+        width: 0;
+    }
+}
 
 // initialisations
 [class^="anime-"] {
     transform-origin: center;
 }
+
 .anime {
     &-blink {
         animation: anime-blink 500ms infinite;
@@ -43,5 +78,21 @@
         // animation: anime-flip 1s infinite;
         animation: 1s anime-flip infinite;
         animation-timing-function: step-end;
+    }
+
+    &-text-slider-up {
+        height: 36px;
+        text-align: center;
+        span {
+            display: block;
+            opacity: 0;
+            animation: anime-slider-text 2s infinite;
+            &:nth-child(2) {
+                animation-delay: 2.7s;
+            }
+            &:nth-child(3) {
+                animation-delay: 5.4s;
+            }
+        }
     }
 }
