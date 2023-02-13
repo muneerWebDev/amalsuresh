@@ -83,7 +83,6 @@
 }
 
 a {
-    cursor: $cursor-image;
     html:not(.uk-light) & {
         &:hover {
             filter: grayscale(1);
@@ -141,7 +140,7 @@ a {
     }
     transition: transform 0.3s;
     &:hover {
-        transform: skewX(-20deg);
+        // transform: skewX(-20deg);
         text-decoration: underline;
     }
 }

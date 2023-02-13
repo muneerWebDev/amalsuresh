@@ -91,7 +91,7 @@ section {
 
 .profile {
 	.image {
-		@media #{$medium-and-down} {
+		@media #{$large-and-down} {
 			margin: 80px auto 0;
 		}
 		[uk-img] {
