@@ -26,7 +26,7 @@ theme.modeManager();
 // loader management
 if (sessionStorage.getItem("cached") === null) {
   let audioElement = document.createElement('audio');
-  audioElement.setAttribute("src", "../media/audios/loading.mp3");
+  audioElement.setAttribute("src", "/../media/audios/loading.mp3");
   audioElement.currentTime = 0;
   audioElement.play();
   document.getElementById("preloader").classList.add("show");
@@ -372,14 +372,46 @@ let soundClickInteractions = (soundItems) => {
 }
 let soundElements = () => {
   let soundItems = [[
-    '../media/audios/meow.mp3', ".uk-logo", "uk-animation-shake"
+    '/../media/audios/meow.mp3', ".uk-logo", "uk-animation-shake"
   ], [
-    '../media/audios/switcher.mp3', "[data-theme-switcher]", false
+    '/../media/audios/switcher.mp3', "[data-theme-switcher]", false
   ]];
 
   soundClickInteractions(soundItems);
 }
 
+let slideupAnime = ()=> {
+  const txts=document.querySelector(".animate-text").children,
+               txtsLen=txts.length;
+           let index=0;
+          const textInTimer=3000,
+                textOutTimer=2800;
+
+         function animateText() {
+            for(let i=0; i<txtsLen; i++){
+              txts[i].classList.remove("text-in","text-out");  
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(function(){
+                txts[index].classList.add("text-out");              
+            },textOutTimer)
+
+            setTimeout(function(){
+
+              if(index == txtsLen-1){
+                  index=0;
+                }
+               else{
+                   index++;
+                 }
+                animateText();
+            },textInTimer); 
+         }
+         
+         window.onload=animateText;
+   
+}
 
 (function ($) {
   "use strict";
@@ -391,6 +423,7 @@ let soundElements = () => {
   cloneMultiply($(".pacman-strip .scrolling-wrapper"));
   cloneMultiply($(".big-text-scroller .slick-continues"));
   slickSliders();
+  slideupAnime();
   detectScrollDirecton();
   $(".currentYear").text(new Date().getFullYear());
   jQuery("[data-theme-switcher]").click(function (e) {
