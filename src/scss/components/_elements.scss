@@ -83,6 +83,7 @@
 }
 
 a {
+    cursor: $cursor-image;
     html:not(.uk-light) & {
         &:hover {
             filter: grayscale(1);
@@ -120,6 +121,7 @@ a {
         position: absolute;
         top: 30%;
         left: -6%;
+        z-index: 1;
     }
 }
 
@@ -165,11 +167,12 @@ html.uk-light {
             }
         }
     }
-    
 }
 
 body {
+    cursor: $cursor-image;
     &:not(.page-loaded) {
+        cursor: none;
         & > * {
             &:not(.preloader) {
                 opacity: 0;

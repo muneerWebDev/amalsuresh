@@ -1,8 +1,14 @@
-/*!
- * Percent-Preloader CSS - v1
- * @author JDM Digital - https://jdmdigital.co
- * Copyright (c) 2022
- */
+.uk-light {
+	.top-bar {
+		.uk-text-secondary {
+			color: var(--primary) !important;
+		}
+	}
+	.color-sec {
+		filter: grayscale(1);
+	}
+}
+
 .pacman-strip {
 	max-width: 100vw;
 	overflow: hidden;
@@ -83,13 +89,13 @@ section {
 	}
 }
 
-.uk-light {
-	.top-bar {
-		.uk-text-secondary {
-			color: var(--primary) !important;
+.profile {
+	.image {
+		@media #{$medium-and-down} {
+			margin: 80px auto 0;
 		}
-	}
-	.color-sec {
-		filter: grayscale(1);
+		[uk-img] {
+			transform: rotate(12deg);
+		}
 	}
 }
