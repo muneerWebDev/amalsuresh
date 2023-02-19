@@ -17,13 +17,12 @@
     <link rel="shortcut icon" href="media/images/favicon.svg" type="image/x-icon">
     <title>Amall Suresh</title>
     <!--build:js js/core-scripts.min.js -->
-    <script src="../node_modules/@iconfu/svg-inject/dist/svg-inject.min.js"></script>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <!-- endbuild -->
 </head>
 
 <body>
-    <header  uk-scrollspy="cls: uk-animation-fade; delay: 500; repeat: false">
+    <header uk-scrollspy="cls: uk-animation-fade; delay: 500; repeat: false">
         <section
             class="top-bar uk-padding-small uk-padding-remove-horizontal uk-margin-small-top uk-margin-small-bottom">
             <div class="uk-position-relative uk-visible-toggle uk-background-primary slick-continues slick-dir-rtl">
@@ -35,12 +34,11 @@
         </section>
         <section
             class="main-bar uk-padding-small uk-padding-remove-horizontal uk-margin-small-top uk-margin-small-bottom">
-            <nav class="uk-container-expand uk-container" uk-navbar>
+            <nav class="uk-container-expand-xxl uk-container" uk-navbar>
 
                 <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo" href="javaScript:void(0)" aria-label="Back to Home">
-                        <img src="media/images/logo.svg" width="55" height="55" alt="logo" onload="SVGInject(this)" />
-                        <!-- <span uk-icon="icon: night-switch"></span> -->
+                    <a class="uk-navbar-item uk-logo" href="javaScript:void(0)" aria-label="Home">
+                        <img src="/media/images/logo.svg" width="55" height="55" alt="logo" uk-svg>
                     </a>
                 </div>
 
@@ -55,8 +53,9 @@
                     </a>
                 </div>
                 <div class="uk-navbar-right">
-                    <a href="javaScript:void(0)" data-theme-switcher class="uk-light-hover-primary"><img src="media/images/night-switcher.svg" width="55" height="55"
-                            alt="logo" onload="SVGInject(this)" /></a>
+                    <a href="javaScript:void(0)" data-theme-switcher class="uk-light-hover-primary">
+                        <img src="/media/images/night-switcher.svg" width="55" height="55" alt="switch" uk-svg class="switcher">
+                    </a>
                 </div>
             </nav>
         </section>

@@ -65,11 +65,22 @@
     width: 0px;
 }
 
-@media #{$medium-and-down} {
+@media #{$medium-only} {
     html {
-        font-size: pxToRem(14);
+        font-size: 14px;
     }
+}
 
+.uk-text-justify-lg{
+    @media #{$medium-and-up} {
+        text-align: justify !important;
+    }
+}
+
+@media #{$small-and-down} {
+    html {
+        font-size: 10.5px;
+    }
     .uk-h3,
     h3 {
         font-size: 1.6em;
@@ -79,6 +90,22 @@
     .uk-badge,
     .uk-button {
         font-size: pxToRem(16);
+    }
+    .uk-margin-small-right{
+        margin-right: 3px !important;
+    }
+    .uk-text-large{
+        font-size: 38px !important;
+    }
+}
+
+@media (min-width: 1446px){
+    .uk-container-expand-xxl{
+        max-width: 100%;
+        &.uk-navbar{
+            padding-left: 2%;
+            padding-right: 2%;
+        }
     }
 }
 

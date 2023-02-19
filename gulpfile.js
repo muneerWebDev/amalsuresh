@@ -54,7 +54,14 @@ function jsOptimize() {
 function images() {
   return gulp
     .src("src/media/images/**/*.*", { since: lastRun(images) })
-    .pipe(imagemin())
+    .pipe(imagemin([
+      imagemin.svgo({
+        plugins: [
+          { removeUnknownsAndDefaults: false },
+          { removeUselessDefs: false },
+        ]
+      })
+    ]))
     .pipe(debug({ title: "processed image :" }))
     .pipe(gulp.dest("dist/media/images"));
 }
