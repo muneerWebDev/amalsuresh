@@ -26,9 +26,9 @@ theme.modeManager();
 // loader management
 if (sessionStorage.getItem("cached") === null) {
   let audioElement = document.createElement('audio');
-  audioElement.setAttribute("src", "/../media/audios/loading.mp3");
-  audioElement.currentTime = 0;
-  audioElement.play();
+  // audioElement.setAttribute("src", "/../media/audios/loading.mp3");
+  // audioElement.currentTime = 0;
+  // audioElement.play();
   document.getElementById("preloader").classList.add("show");
   var counting = setInterval(function () {
     var loader = document.getElementById("percentage");
@@ -51,7 +51,7 @@ if (sessionStorage.getItem("cached") === null) {
           $("body").toggleClass("page-loaded");
           setTimeout(function () {
             $("nav").css("visibility", "visible");
-            svgAutoResizer();
+            svgAutoResizer("svg");
           }, 880);
         }
       }
@@ -206,7 +206,7 @@ function customUIkitIcons() {
     <path d="M20.5272 109.71C21.0895 109.339 21.385 109.007 21.6223 108.474C21.9865 107.678 21.9174 106.698 21.441 105.851C20.6587 104.459 18.9755 103.988 17.5739 104.776C16.9254 105.141 16.5109 105.677 16.3513 106.372C16.2395 106.834 16.2492 107.145 16.3857 108.074C16.5242 108.932 16.5314 108.969 16.5216 109.099C16.5084 109.492 16.3561 109.784 16.0632 109.948C15.603 110.207 15.0964 110.065 14.8317 109.595C14.5612 109.113 14.6894 108.656 15.1888 108.32L14.3536 106.835C13.8064 107.184 13.5005 107.521 13.2827 108.015C12.9636 108.745 13.0276 109.618 13.4452 110.361C14.151 111.616 15.6825 112.062 16.9063 111.374C17.879 110.827 18.3041 109.845 18.1029 108.581C17.903 107.344 17.905 107.274 17.943 106.95C17.9947 106.577 18.196 106.299 18.5307 106.11C19.0851 105.799 19.7133 106.01 20.0603 106.627C20.4191 107.265 20.2994 107.787 19.6862 108.214L20.5272 109.71Z" fill="var(--primary)"/>
     <path d="M75.3301 80.8466C78.8227 80.8466 81.6539 78.0153 81.6539 74.5228C81.6539 71.0302 78.8227 68.199 75.3301 68.199C71.8376 68.199 69.0063 71.0302 69.0063 74.5228C69.0063 78.0153 71.8376 80.8466 75.3301 80.8466Z" fill="var(--primary)"/>
     </svg>`,
-    mail: `<svg xmlns="http://www.w3.org/2000/svg" width="37" height="22" tabWidth="26" tabHeight="26"   viewBox="0 0 37 22" fill="none">
+    mail: `<svg xmlns="http://www.w3.org/2000/svg" width="37" height="22" tabWidth="26" tabHeight="26" mobilewidth="22" mobileheight="22"   viewBox="0 0 37 22" fill="none">
 <path d="M8.76686 2.56689H6.2002V5.50023H8.76686V2.56689Z" fill="var(--secondary)"/>
 <path d="M6.20042 0H3.26709V2.56667H6.20042V0Z" fill="var(--secondary)"/>
 <path d="M3.26686 0H0.700195V2.56667H3.26686V0Z" fill="var(--secondary)"/>
@@ -414,28 +414,33 @@ let slideupAnime = () => {
 
 }
 
-let svgAutoResizer = () => {
-  $("svg").each((index, item) => {
+let svgAutoResizer = (elem) => {
+  $(elem).each((index, item) => {
 
+    // adding a span warooer to the svg if there is none 
+    /*
+    if(!$(item).parent("span").length){
+      $(item).wrap(`<span syle="display:inline-block">`)
+    }
+    */
     let width = $(item).attr("width");
     let height = $(item).attr("height");
 
-    $(item).attr("viewBox", `0 0 ${width} ${height}`);
+    if ($(item).attr("viewBox") === undefined)
+      $(item).attr("viewBox", `0 0 ${width} ${height}`);
 
-    setTimeout(() => {
-      let tabWidth = $(item).attr("tabwidth");
-      let tabHeight = $(item).attr("tabheight");
-      let mobileWidth = $(item).attr("mobilewidth");
-      let mobileHeight = $(item).attr("mobileheight");
+    let tabWidth = $(item).attr("tabwidth");
+    let tabHeight = $(item).attr("tabheight");
+    let mobileWidth = $(item).attr("mobilewidth");
+    let mobileHeight = $(item).attr("mobileheight");
 
-      if ((tabWidth & tabHeight) && ($(window).width() < 1199)) {
-        $(item).attr("width", `${tabWidth}`);
-        $(item).attr("height", `${tabHeight}`);
-      } else if ((mobileWidth & mobileHeight) && ($(window).width() < 575)) {
-        $(item).attr("width", `${mobileWidth}`);
-        $(item).attr("height", `${mobileHeight}`);
-      }
-    }, 100);
+    if ((mobileWidth & mobileHeight) && ($(window).width() < 575)) {
+      $(item).attr("width", `${mobileWidth}`).parent().css({ "width": mobileWidth, "height": mobileHeight });
+      $(item).attr("height", `${mobileHeight}`);
+    } else if ((tabWidth & tabHeight) && ($(window).width() < 1199)) {
+      $(item).attr("width", `${tabWidth}`).parent().css({ "width": tabWidth, "height": tabHeight });
+      $(item).attr("height", `${tabHeight}`);
+    }
 
   });
 }
@@ -444,7 +449,7 @@ let svgAutoResizer = () => {
 function pageLoader() {
   $(window).on("load", function () {
     setTimeout(function () {
-      svgAutoResizer();
+      svgAutoResizer("svg");
       $("body").addClass("page-loaded");
     }, 1000);
   });
@@ -467,9 +472,13 @@ function pageLoader() {
     theme.modeSwitcher();
   });
   soundElements();
-  svgAutoResizer();
-  window.addEventListener("resize", function () {
-    svgAutoResizer();
-  }, false);
+  svgAutoResizer("svg");
 
+  $("[uk-icon]").each((index, el) => {
+    UIkit.util.on(el, 'inview', function () {
+      setTimeout(function () {
+        svgAutoResizer(el);
+      }, 100);
+    });
+  });
 })($);

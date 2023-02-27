@@ -71,7 +71,7 @@
     }
 }
 
-.uk-text-justify-lg{
+.uk-text-justify-lg {
     @media #{$medium-and-up} {
         text-align: justify !important;
     }
@@ -91,18 +91,22 @@
     .uk-button {
         font-size: pxToRem(16);
     }
-    .uk-margin-small-right{
+    .uk-h6,
+    h6 {
+        font-size: pxToRem(16);
+    }
+    .uk-margin-small-right {
         margin-right: 3px !important;
     }
-    .uk-text-large{
+    .uk-text-large {
         font-size: 38px !important;
     }
 }
 
-@media (min-width: 1446px){
-    .uk-container-expand-xxl{
+@media (min-width: 1446px) {
+    .uk-container-expand-xxl {
         max-width: 100%;
-        &.uk-navbar{
+        &.uk-navbar {
             padding-left: 2%;
             padding-right: 2%;
         }
@@ -130,6 +134,10 @@ a {
     @extend .font-secondary;
     display: inline-block;
     margin: 15px;
+
+    @media #{$medium-and-down} {
+        margin: 6px 0px;
+    }
 }
 
 .font-secondary {
@@ -164,6 +172,14 @@ a {
     align-items: center;
     [uk-icon] {
         margin-right: 15px;
+        margin-top: -1.8%;
+        @media #{$medium-and-down} {
+            margin-top: 1%;
+        }
+        @media #{$small-and-down} {
+            margin-right: 10px;
+            margin-top: 2%;
+        }
     }
     transition: transform 0.3s;
     &:hover {
@@ -171,7 +187,9 @@ a {
         text-decoration: underline;
     }
 }
-
+.uk-icon > svg {
+    max-height: 100%;
+}
 html:not(.uk-light) {
     .a-link.uk-text-secondary:hover {
         color: $color-primary !important;

@@ -3,6 +3,15 @@
 		.uk-text-secondary {
 			color: var(--primary) !important;
 		}
+		@media #{$medium-and-down} {
+			img{
+				max-width: 15px;
+			}
+			.animate-text{
+				font-size: 16px;
+			}
+		}
+
 	}
 	.color-sec {
 		filter: grayscale(1);
@@ -104,6 +113,7 @@ section {
 }
 
 .logo-footer{
+	display: inline-block;
 	margin: -5px 10px 0 0;
 	@media #{$small-and-down} {
 		margin: -2px 8px 0 0;
