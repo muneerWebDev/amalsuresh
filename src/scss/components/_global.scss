@@ -3,21 +3,29 @@
 		.uk-text-secondary {
 			color: var(--primary) !important;
 		}
-		@media #{$medium-and-down} {
-			img{
-				max-width: 15px;
-			}
-			.animate-text{
-				font-size: 16px;
-			}
-		}
-
 	}
 	.color-sec {
 		filter: grayscale(1);
 	}
 }
 
+@media #{$medium-and-down} {
+	.top-bar {
+		img {
+			max-width: 15px;
+		}
+	}
+
+	.main-bar{
+		
+		.animate-text {
+			font-size: 16px;
+		}
+	}
+	.uk-button {
+		font-size: 12px;
+	}
+}
 .pacman-strip {
 	max-width: 100vw;
 	overflow: hidden;
@@ -112,7 +120,7 @@ section {
 	}
 }
 
-.logo-footer{
+.logo-footer {
 	display: inline-block;
 	margin: -5px 10px 0 0;
 	@media #{$small-and-down} {
