@@ -12,12 +12,12 @@
 @media #{$medium-and-down} {
 	.top-bar {
 		img {
-			max-width: 15px;
+			max-width: 24px;
+			max-height: 24px;
 		}
 	}
 
-	.main-bar{
-		
+	.main-bar {
 		.animate-text {
 			font-size: 16px;
 		}
@@ -120,10 +120,16 @@ section {
 	}
 }
 
-.logo-footer {
-	display: inline-block;
-	margin: -5px 10px 0 0;
+footer {
 	@media #{$small-and-down} {
-		margin: -2px 8px 0 0;
+		.logo-footer {
+			display: inline-block;
+			margin: -5px 10px 0 0;
+			margin: -2px 8px 0 0;
+		}
+
+		[uk-icon="icon: behance"] svg {
+			margin: 0 0 -5px 0;
+		}
 	}
 }
