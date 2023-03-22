@@ -115,6 +115,7 @@ section {
 			}
 		}
 		&:hover {
+			filter: none !important;
 			.uk-card-media-left {
 				img {
 					transform: rotate(5deg) scale(1.2);
